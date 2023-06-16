@@ -16,3 +16,5 @@ sequenceDiagram
     activate server
     server-->>browser: HTML document
     deactivate server
+    
+    Note right of browser: The new note is now displayed on the notes page
