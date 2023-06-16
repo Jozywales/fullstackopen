@@ -2,14 +2,14 @@ sequenceDiagram
     participant browser
     participant server
     
-    Note right of browser: When the button on the form is clicked, the browser will send the user input to the server
+    Note right of browser: When the button on the form is clicked, the browser will send the user input to the server. 
     
-    browser->server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
     
-    Note right of browser: The server responds with 302 status.
+    activate server
+    server-->>browser: Status Code: 302 Found
+    deactivate server
     
-    server-->browser: Status Code: 302 Found
-
     Note right of browser: The server asks the browser to do a new GET request so the browser reloads the Notes page. 
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
@@ -17,4 +17,4 @@ sequenceDiagram
     server-->>browser: HTML document
     deactivate server
     
-    Note right of browser: The new note is now displayed on the notes page
+    Note right of browser: The new note is now displayed on the notes page.
