@@ -10,7 +10,7 @@ sequenceDiagram
     server-->>browser: Status Code: 302 Found
     deactivate server
     
-    Note right of browser: The server asks the browser to do a new GET request so the browser reloads the Notes page. 
+    Note right of browser: The server asks the browser to do a new GET request so the browser redirects to the Notes page. 
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
     activate server
